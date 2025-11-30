@@ -20,5 +20,6 @@ This repository aims to:
 
 ## 📬 Contact
 Prepared by **Rayan Hobballah**  
+hobballahr@gmail.com
 Master’s in Econometrics & Economic and Political Analysis 
 University of Strasbourg  
