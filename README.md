@@ -16,7 +16,7 @@ This repository aims to:
 
 ---
 
-## 🗂 Structure
+
 
 ## 📬 Contact
 Prepared by **Rayan Hobballah**  
