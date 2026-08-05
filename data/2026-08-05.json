@@ -1,0 +1,349 @@
+{
+  "generated_at": "2026-08-05T11:32:36Z",
+  "week_label": "27–31 July 2026",
+  "week_start": "2026-07-27",
+  "week_end": "2026-07-31",
+  "prices": {
+    "European equities": [
+      {
+        "ticker": "^STOXX",
+        "name": "Stoxx Europe 600",
+        "last": 656.72,
+        "chg_1w_pct": 1.82,
+        "chg_1m_pct": 0.96,
+        "chg_ytd_pct": 9.13,
+        "range_52w_pos": 99.9,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "^STOXX50E",
+        "name": "Euro Stoxx 50",
+        "last": 6489.49,
+        "chg_1w_pct": 3.85,
+        "chg_1m_pct": 1.43,
+        "chg_ytd_pct": 9.55,
+        "range_52w_pos": 100.0,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "^FCHI",
+        "name": "CAC 40",
+        "last": 8668.98,
+        "chg_1w_pct": 3.1,
+        "chg_1m_pct": 2.23,
+        "chg_ytd_pct": 5.78,
+        "range_52w_pos": 100.0,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "^GDAXI",
+        "name": "DAX",
+        "last": 26218.19,
+        "chg_1w_pct": 2.98,
+        "chg_1m_pct": 1.55,
+        "chg_ytd_pct": 6.84,
+        "range_52w_pos": 100.0,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "^FTSE",
+        "name": "FTSE 100",
+        "last": 10843.63,
+        "chg_1w_pct": -0.59,
+        "chg_1m_pct": 1.8,
+        "chg_ytd_pct": 8.97,
+        "range_52w_pos": 96.3,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "EXV1.DE",
+        "name": "Euro Stoxx Banks (ETF proxy)",
+        "last": 42.31,
+        "chg_1w_pct": 3.65,
+        "chg_1m_pct": 3.46,
+        "chg_ytd_pct": 22.58,
+        "range_52w_pos": 98.0,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "ASML.AS",
+        "name": "ASML",
+        "last": 1474.2,
+        "chg_1w_pct": 8.22,
+        "chg_1m_pct": -9.36,
+        "chg_ytd_pct": 50.18,
+        "range_52w_pos": 77.8,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "SAP.DE",
+        "name": "SAP",
+        "last": 171.16,
+        "chg_1w_pct": 5.63,
+        "chg_1m_pct": 22.2,
+        "chg_ytd_pct": -13.81,
+        "range_52w_pos": 35.1,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "MC.PA",
+        "name": "LVMH",
+        "last": 476.1,
+        "chg_1w_pct": 1.74,
+        "chg_1m_pct": -3.11,
+        "chg_ytd_pct": -24.61,
+        "range_52w_pos": 15.8,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "TTE.PA",
+        "name": "TotalEnergies",
+        "last": 74.67,
+        "chg_1w_pct": -1.53,
+        "chg_1m_pct": 11.2,
+        "chg_ytd_pct": 36.19,
+        "range_52w_pos": 83.6,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "NOVO-B.CO",
+        "name": "Novo Nordisk",
+        "last": 292.1,
+        "chg_1w_pct": -13.59,
+        "chg_1m_pct": -9.03,
+        "chg_ytd_pct": -8.5,
+        "range_52w_pos": 41.6,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "BNP.PA",
+        "name": "BNP Paribas",
+        "last": 111.24,
+        "chg_1w_pct": 4.04,
+        "chg_1m_pct": 7.37,
+        "chg_ytd_pct": 39.82,
+        "range_52w_pos": 98.7,
+        "as_of": "2026-08-05"
+      }
+    ],
+    "US equities": [
+      {
+        "ticker": "^GSPC",
+        "name": "S&P 500",
+        "last": 7736.52,
+        "chg_1w_pct": 4.14,
+        "chg_1m_pct": 3.38,
+        "chg_ytd_pct": 12.8,
+        "range_52w_pos": 100.0,
+        "as_of": "2026-08-04"
+      },
+      {
+        "ticker": "^NDX",
+        "name": "Nasdaq 100",
+        "last": 29733.16,
+        "chg_1w_pct": 7.1,
+        "chg_1m_pct": 1.38,
+        "chg_ytd_pct": 17.96,
+        "range_52w_pos": 88.0,
+        "as_of": "2026-08-04"
+      },
+      {
+        "ticker": "RSP",
+        "name": "S&P 500 Equal Weight",
+        "last": 220.23,
+        "chg_1w_pct": 1.17,
+        "chg_1m_pct": 2.48,
+        "chg_ytd_pct": 15.12,
+        "range_52w_pos": 100.0,
+        "as_of": "2026-08-04"
+      },
+      {
+        "ticker": "NVDA",
+        "name": "Nvidia",
+        "last": 211.94,
+        "chg_1w_pct": 7.58,
+        "chg_1m_pct": 8.78,
+        "chg_ytd_pct": 12.36,
+        "range_52w_pos": 66.6,
+        "as_of": "2026-08-04"
+      },
+      {
+        "ticker": "MSFT",
+        "name": "Microsoft",
+        "last": 492.81,
+        "chg_1w_pct": 25.29,
+        "chg_1m_pct": 26.2,
+        "chg_ytd_pct": 4.67,
+        "range_52w_pos": 75.3,
+        "as_of": "2026-08-04"
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "Alphabet",
+        "last": 377.65,
+        "chg_1w_pct": 13.17,
+        "chg_1m_pct": 4.93,
+        "chg_ytd_pct": 19.99,
+        "range_52w_pos": 88.1,
+        "as_of": "2026-08-04"
+      },
+      {
+        "ticker": "META",
+        "name": "Meta",
+        "last": 587.94,
+        "chg_1w_pct": -0.92,
+        "chg_1m_pct": 0.86,
+        "chg_ytd_pct": -9.44,
+        "range_52w_pos": 23.9,
+        "as_of": "2026-08-04"
+      },
+      {
+        "ticker": "AMZN",
+        "name": "Amazon",
+        "last": 277.42,
+        "chg_1w_pct": 20.17,
+        "chg_1m_pct": 14.32,
+        "chg_ytd_pct": 22.48,
+        "range_52w_pos": 92.3,
+        "as_of": "2026-08-04"
+      }
+    ],
+    "FX": [
+      {
+        "ticker": "EURUSD=X",
+        "name": "EUR/USD",
+        "last": 1.16,
+        "chg_1w_pct": 1.46,
+        "chg_1m_pct": 1.01,
+        "chg_ytd_pct": -1.68,
+        "range_52w_pos": 29.9,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "EURGBP=X",
+        "name": "EUR/GBP",
+        "last": 0.86,
+        "chg_1w_pct": 0.01,
+        "chg_1m_pct": 0.05,
+        "chg_ytd_pct": -1.73,
+        "range_52w_pos": 26.8,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "EURCHF=X",
+        "name": "EUR/CHF",
+        "last": 0.93,
+        "chg_1w_pct": 0.1,
+        "chg_1m_pct": 1.6,
+        "chg_ytd_pct": 0.36,
+        "range_52w_pos": 76.8,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "JPY=X",
+        "name": "USD/JPY",
+        "last": 157.54,
+        "chg_1w_pct": -3.86,
+        "chg_1m_pct": -2.42,
+        "chg_ytd_pct": 0.52,
+        "range_52w_pos": 63.8,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "DX-Y.NYB",
+        "name": "Dollar Index (DXY)",
+        "last": 99.73,
+        "chg_1w_pct": -1.06,
+        "chg_1m_pct": -1.11,
+        "chg_ytd_pct": 1.33,
+        "range_52w_pos": 65.1,
+        "as_of": "2026-08-05"
+      }
+    ],
+    "Commodities": [
+      {
+        "ticker": "BZ=F",
+        "name": "Brent crude",
+        "last": 80.45,
+        "chg_1w_pct": -11.34,
+        "chg_1m_pct": 11.75,
+        "chg_ytd_pct": 32.43,
+        "range_52w_pos": 36.2,
+        "as_of": "2026-08-05"
+      },
+      {
+        "ticker": "GC=F",
+        "name": "Gold",
+        "last": 4230.5,
+        "chg_1w_pct": 4.85,
+        "chg_1m_pct": 1.81,
+        "chg_ytd_pct": -1.94,
+        "range_52w_pos": 45.7,
+        "as_of": "2026-08-05"
+      }
+    ],
+    "Crypto": [
+      {
+        "ticker": "BTC-USD",
+        "name": "Bitcoin",
+        "last": 64023.63,
+        "chg_1w_pct": 0.18,
+        "chg_1m_pct": 0.04,
+        "chg_ytd_pct": -27.85,
+        "range_52w_pos": 14.2,
+        "as_of": "2026-08-05"
+      }
+    ]
+  },
+  "yields": {
+    "US (FRED)": [
+      {
+        "series": "DGS10",
+        "name": "US 10Y Treasury",
+        "last_pct": 4.7,
+        "chg_1w_bps": 5.0,
+        "chg_1m_bps": 21.0,
+        "chg_ytd_bps": 51.0,
+        "as_of": "2026-08-03"
+      },
+      {
+        "series": "DGS2",
+        "name": "US 2Y Treasury",
+        "last_pct": 4.25,
+        "chg_1w_bps": -6.0,
+        "chg_1m_bps": 11.0,
+        "chg_ytd_bps": 78.0,
+        "as_of": "2026-08-03"
+      }
+    ],
+    "Euro area (ECB)": [
+      {
+        "series": "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y",
+        "name": "Euro area AAA 10Y",
+        "last_pct": 3.146,
+        "chg_1w_bps": -1.2,
+        "chg_1m_bps": 14.0,
+        "chg_ytd_bps": 17.1,
+        "as_of": "2026-08-04"
+      },
+      {
+        "series": "YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y",
+        "name": "Euro area all-issuer 10Y",
+        "last_pct": 3.536,
+        "chg_1w_bps": -3.7,
+        "chg_1m_bps": 14.6,
+        "chg_ytd_bps": 17.6,
+        "as_of": "2026-08-04"
+      },
+      {
+        "series": "DERIVED",
+        "name": "Euro area 10Y spread (all-issuer − AAA)",
+        "last_pct": 0.39,
+        "chg_1w_bps": null,
+        "chg_1m_bps": null,
+        "chg_ytd_bps": null,
+        "as_of": "2026-08-04"
+      }
+    ]
+  }
+}
