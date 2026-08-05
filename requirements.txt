@@ -1,0 +1,11 @@
+yfinance>=0.2.58
+pandas>=2.2
+requests>=2.32
+anthropic>=0.40
+markdown>=3.6
+
+### yfinance — pulls the market prices from Yahoo Finance
+### pandas — handles the tables and calculates the % changes
+### requests — fetches the FRED and ECB data over the internet
+### anthropic — calls the API that writes the letter
+### markdown — converts your Markdown letter into HTML
