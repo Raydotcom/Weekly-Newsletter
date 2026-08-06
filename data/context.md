@@ -1,5 +1,5 @@
 # Market data — week of 27-31 July 2026
-_Snapshot generated 2026-08-05T14:02:41Z. Week covered: 2026-07-27 to 2026-07-31._
+_Snapshot generated 2026-08-06T23:22:20Z. Week covered: 2026-07-27 to 2026-07-31._
 
 ## European equities
 | Instrument | Last | 1W | 1M | YTD | 52w range pos |
@@ -10,12 +10,12 @@ _Snapshot generated 2026-08-05T14:02:41Z. Week covered: 2026-07-27 to 2026-07-31
 | DAX | 25,629.24 | +2.11% | +2.35% | +5.30% | 95% |
 | FTSE 100 | 10,868.10 | +1.23% | +3.72% | +10.10% | 98% |
 | Euro Stoxx Banks (ETF proxy) | 41.99 | +2.05% | +5.94% | +24.23% | 100% |
-| ASML | 1,440.00 | -7.76% | -12.18% | +60.94% | 75% |
-| SAP | 155.92 | +11.21% | +10.68% | -23.66% | 23% |
-| LVMH | 473.30 | +2.51% | -1.60% | -23.90% | 14% |
-| TotalEnergies | 75.57 | -0.43% | +14.64% | +41.17% | 86% |
-| Novo Nordisk | 330.90 | +3.21% | +2.13% | +3.25% | 52% |
-| BNP Paribas | 108.84 | +2.76% | +7.59% | +39.18% | 100% |
+| ASML | 1,434.20 | -8.13% | -12.53% | +60.29% | 75% |
+| SAP | 157.68 | +12.47% | +11.93% | -22.79% | 24% |
+| LVMH | 475.15 | +2.91% | -1.22% | -23.60% | 15% |
+| TotalEnergies | 76.42 | +0.69% | +15.93% | +42.76% | 89% |
+| Novo Nordisk | 306.50 | -4.40% | -5.40% | -4.37% | 40% |
+| BNP Paribas | 109.66 | +3.53% | +8.40% | +40.23% | 100% |
 
 ## US equities
 | Instrument | Last | 1W | 1M | YTD | 52w range pos |
@@ -41,7 +41,6 @@ _Snapshot generated 2026-08-05T14:02:41Z. Week covered: 2026-07-27 to 2026-07-31
 ## Commodities
 | Instrument | Last | 1W | 1M | YTD | 52w range pos |
 |---|---|---|---|---|---|
-| Brent crude | 90.12 | -6.88% | +25.92% | +48.61% | 52% |
 | Gold | 4,049.10 | -0.45% | -0.47% | -10.60% | 37% |
 
 ## Crypto
@@ -67,11 +66,11 @@ _Snapshot generated 2026-08-05T14:02:41Z. Week covered: 2026-07-27 to 2026-07-31
 - FTSE 100 is at the top of its 52-week range
 - Euro Stoxx Banks (ETF proxy) rose 2.05% over the week
 - Euro Stoxx Banks (ETF proxy) is at the top of its 52-week range
-- ASML fell 7.76% over the week
-- SAP rose 11.21% over the week
-- LVMH rose 2.51% over the week
-- Novo Nordisk rose 3.21% over the week
-- BNP Paribas rose 2.76% over the week
+- ASML fell 8.13% over the week
+- SAP rose 12.47% over the week
+- LVMH rose 2.91% over the week
+- Novo Nordisk fell 4.40% over the week
+- BNP Paribas rose 3.53% over the week
 - BNP Paribas is at the top of its 52-week range
 - Nvidia fell 2.94% over the week
 - Microsoft rose 21.75% over the week
@@ -81,5 +80,4 @@ _Snapshot generated 2026-08-05T14:02:41Z. Week covered: 2026-07-27 to 2026-07-31
 - EUR/USD rose 1.29% over the week
 - USD/JPY fell 2.23% over the week
 - Dollar Index (DXY) fell 1.65% over the week
-- Brent crude fell 6.88% over the week
 - Bitcoin fell 3.87% over the week
