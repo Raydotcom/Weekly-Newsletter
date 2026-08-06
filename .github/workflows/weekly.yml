@@ -36,6 +36,24 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python src/draft_letter.py
+      - name: Fetch market data
+        run: python src/fetch_data.py
+      - name: Fetch news
+        run: python src/fetch_news.py
+
+      - name: Build prompt context
+        run: python src/build_context.py
+
+      - name: Draft letter
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python src/draft_letter.py
+
+      - name: Validate letter
+        run: python src/validate.py
+
+      - name: Render HTML
+        run: python src/render_html.py
 
       - name: Render HTML
         run: python src/render_html.py
@@ -51,3 +69,5 @@ jobs:
             git commit -m "Weekly letter: $(date +'%Y-%m-%d')"
             git push
           fi
+      - name: Fetch news
+        run: python src/fetch_news.py
