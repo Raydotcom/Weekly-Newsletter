@@ -112,18 +112,30 @@ def main() -> None:
     client = genai.Client(api_key=api_key)
     print(f"Drafting letter for week of {week_label} using {MODEL}...")
 
-    try:
-        interaction = client.interactions.create(
-            model=MODEL,
-            input=build_input(brief, week_label, context, news),
-            generation_config={
-                "temperature": 0.7,
-                "max_output_tokens": 8000,
-                "top_p": 0.95,
-            },
-        )
-    except Exception as exc:
-        sys.exit(f"Gemini API call failed: {exc}")
+    import time
+
+    interaction = None
+    last_error = None
+    for attempt in range(1, 4):
+        try:
+            interaction = client.interactions.create(
+                model=MODEL,
+                input=build_input(brief, week_label, context, news),
+                generation_config={
+                    "temperature": 0.7,
+                    "max_output_tokens": 8000,
+                    "top_p": 0.95,
+                },
+            )
+            break
+        except Exception as exc:
+            last_error = exc
+            print(f"  attempt {attempt}/3 failed: {type(exc).__name__}")
+            if attempt < 3:
+                time.sleep(20 * attempt)
+
+    if interaction is None:
+        sys.exit(f"Gemini API call failed after 3 attempts: {last_error}")
 
     letter = extract_text(interaction)
 
