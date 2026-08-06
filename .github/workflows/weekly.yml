@@ -12,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Check out repository
@@ -32,12 +33,9 @@ jobs:
       - name: Build prompt context
         run: python src/build_context.py
 
-      - name: Draft letter
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python src/draft_letter.py
       - name: Fetch market data
         run: python src/fetch_data.py
+
       - name: Fetch news
         run: python src/fetch_news.py
 
