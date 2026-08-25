@@ -61,9 +61,15 @@ Market data. Section 2 must use these figures and only these:
 
 ---
 
-Each line in section 2 is one sentence: the figure, then what moved it.
-Vary the verbs across lines. Do not append a comment about the 52-week
-range unless the writing rules above require it.
+Section 2 uses this exact line format, one markdown bullet per instrument:
+
+- Instrument name: +0.00% — what moved it.
+
+Keep the leading hyphen, the instrument name exactly as written in the
+tables above, the colon straight after the name, and the figure
+immediately after the colon. One sentence per line, and vary the verbs
+across lines. Do not append a comment about the 52-week range unless the
+writing rules above require it.
 
 Write sections 1, 2 and 3. Stop after section 3 - the Article of the Week is
 added separately. Return only the letter in Markdown, with no preamble."""
