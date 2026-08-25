@@ -22,6 +22,12 @@ EQUITY_THRESHOLD = 2.0   # percent, 1 week
 FX_THRESHOLD = 1.0
 YIELD_THRESHOLD = 10.0   # basis points, 1 week
 
+# Instruments that must appear in every letter
+REQUIRED_COVERAGE = [
+    "EUR/USD", "EUR/GBP", "EUR/CHF", "USD/JPY",
+    "Dollar Index (DXY)", "Brent crude", "Gold", "Bitcoin",
+]
+
 
 def fmt_pct(v: float | None) -> str:
     if v is None:
@@ -35,16 +41,39 @@ def fmt_bps(v: float | None) -> str:
     return f"{v:+.1f} bps"
 
 
+def range_label(pos: float | None) -> str:
+    """Fixed wording for where a price sits in its 52-week range.
+
+    The model must reuse these strings verbatim. Only >= 99.5 may be
+    called a 52-week high; anything else gets softer language.
+    """
+    if pos is None:
+        return "n/a"
+    if pos >= 99.5:
+        return "at a 52-week high"
+    if pos >= 95:
+        return "near the top of its 52-week range"
+    if pos >= 50:
+        return "in the upper half of its 52-week range"
+    if pos <= 0.5:
+        return "at a 52-week low"
+    if pos <= 5:
+        return "near the bottom of its 52-week range"
+    return "in the lower half of its 52-week range"
+
+
 def price_table(rows: list[dict]) -> str:
     lines = [
-        "| Instrument | Last | 1W | 1M | YTD | 52w range pos |",
-        "|---|---|---|---|---|---|",
+        "| Instrument | Last | 1W | 1M | YTD | 52w range pos | Range wording (use verbatim) |",
+        "|---|---|---|---|---|---|---|",
     ]
     for r in rows:
-        pos = "n/a" if r["range_52w_pos"] is None else f"{r['range_52w_pos']:.0f}%"
+        pos = r["range_52w_pos"]
+        pos_str = "n/a" if pos is None else f"{pos:.0f}%"
         lines.append(
             f"| {r['name']} | {r['last']:,.2f} | {fmt_pct(r['chg_1w_pct'])} | "
-            f"{fmt_pct(r['chg_1m_pct'])} | {fmt_pct(r['chg_ytd_pct'])} | {pos} |"
+            f"{fmt_pct(r['chg_1m_pct'])} | {fmt_pct(r['chg_ytd_pct'])} | "
+            f"{pos_str} | {range_label(pos)} |"
         )
     return "\n".join(lines)
 
@@ -77,10 +106,8 @@ def notable_moves(snap: dict) -> list[str]:
                 flags.append(f"- {r['name']} {direction} {abs(v):.2f}% over the week")
             # extremes of the annual range are worth a mention
             pos = r["range_52w_pos"]
-            if pos is not None and pos >= 97:
-                flags.append(f"- {r['name']} is at the top of its 52-week range")
-            elif pos is not None and pos <= 3:
-                flags.append(f"- {r['name']} is at the bottom of its 52-week range")
+            if pos is not None and (pos >= 95 or pos <= 5):
+                flags.append(f"- {r['name']} is {range_label(pos)}")
 
     for _, rows in snap["yields"].items():
         for r in rows:
@@ -90,6 +117,27 @@ def notable_moves(snap: dict) -> list[str]:
                 flags.append(f"- {r['name']} {direction} {abs(v):.1f} bps over the week")
 
     return flags
+
+
+def coverage_block() -> str:
+    lines = [
+        "## Required coverage",
+        "Every instrument below must appear in the letter with at least one "
+        "sentence. None may be omitted or merged away:",
+        "",
+    ]
+    lines += [f"- {name}" for name in REQUIRED_COVERAGE]
+    lines += [
+        "",
+        "## Writing rules",
+        "- Rate levels are quoted in percent. Rate changes and spreads are "
+        "quoted in basis points. Never convert between the two.",
+        "- For where any price sits in its 52-week range, copy the "
+        "\"Range wording\" column verbatim. Never invent your own "
+        "characterisation, and never call something a 52-week high unless "
+        "the column says so.",
+    ]
+    return "\n".join(lines)
 
 
 def main() -> None:
@@ -113,6 +161,9 @@ def main() -> None:
     flags = notable_moves(snap)
     if flags:
         parts += ["## Notable moves (auto-flagged)", *flags, ""]
+
+    # Coverage + writing rules go last: recency helps in long contexts
+    parts += [coverage_block(), ""]
 
     OUT.write_text("\n".join(parts), encoding="utf-8")
     print(f"Wrote {OUT} — {len(flags)} notable moves flagged")
