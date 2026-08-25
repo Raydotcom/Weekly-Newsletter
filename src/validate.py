@@ -52,20 +52,30 @@ def latest_letter() -> Path:
 
 def parse_letter_lines(text: str) -> dict[str, dict[str, float]]:
     """
-    Pull '- Name: <figures>' lines out of the letter.
+    Pull 'Name: <figures>' lines out of the letter.
+
+    The leading markdown bullet is optional: the model sometimes drops it,
+    and a line is identifiable by the 'Name: figure' shape alone. Bold
+    markers around the name are tolerated too.
 
     Returns {name: {"pct": value, "bps": value}} — a line may carry both,
-    e.g. '- US 10Y Treasury: 4.69% (+1.0 bps)'.
+    e.g. 'US 10Y Treasury: 4.69% (+1.0 bps)'.
     """
     found: dict[str, dict[str, float]] = {}
-    line_pattern = re.compile(r"^\s*[-*]\s*(?P<name>[^:]+?):\s*(?P<rest>.+)$")
+    line_pattern = re.compile(
+        r"^\s*(?:[-*+]\s*)?(?P<name>[^:|#]{2,60}?):\s*(?P<rest>.*[+-]?\d.*)$"
+    )
     fig_pattern = re.compile(r"(?P<val>[+-]?\d+(?:[.,]\d+)?)\s*(?P<unit>%|bps)")
 
     for line in text.splitlines():
+        stripped = line.strip()
+        # skip headings and table rows
+        if stripped.startswith("#") or stripped.startswith("|"):
+            continue
         m = line_pattern.match(line)
         if not m:
             continue
-        name = m.group("name").strip().strip("*").strip()
+        name = m.group("name").strip().strip("*_").strip()
         figures: dict[str, float] = {}
         for f in fig_pattern.finditer(m.group("rest")):
             unit = "pct" if f.group("unit") == "%" else "bps"
