@@ -170,7 +170,6 @@ def main() -> None:
 
     OUT_DIR.mkdir(exist_ok=True)
     out_path = OUT_DIR / f"{snapshot['week_end']}.md"
-    print(f"  DEBUG: letter ends with: {letter[-200:]!r}")
     out_path.write_text(letter, encoding="utf-8")
 
     print(f"Wrote {out_path} — {len(letter.split())} words")
