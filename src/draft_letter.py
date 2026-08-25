@@ -17,6 +17,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 from google import genai
@@ -57,6 +58,12 @@ and frame anything uncertain as an expectation. Prioritise European coverage.
 Market data. Section 2 must use these figures and only these:
 
 {context}
+
+---
+
+Each line in section 2 is one sentence: the figure, then what moved it.
+Vary the verbs across lines. Do not append a comment about the 52-week
+range unless the writing rules above require it.
 
 Write sections 1, 2 and 3. Stop after section 3 - the Article of the Week is
 added separately. Return only the letter in Markdown, with no preamble."""
@@ -111,8 +118,6 @@ def main() -> None:
 
     client = genai.Client(api_key=api_key)
     print(f"Drafting letter for week of {week_label} using {MODEL}...")
-
-    import time
 
     interaction = None
     last_error = None

@@ -132,10 +132,17 @@ def coverage_block() -> str:
         "## Writing rules",
         "- Rate levels are quoted in percent. Rate changes and spreads are "
         "quoted in basis points. Never convert between the two.",
-        "- For where any price sits in its 52-week range, copy the "
-        "\"Range wording\" column verbatim. Never invent your own "
-        "characterisation, and never call something a 52-week high unless "
-        "the column says so.",
+        "- Mention where a price sits in its 52-week range ONLY when the "
+        "\"Range wording\" column says \"at a 52-week high\", \"near the top\", "
+        "\"at a 52-week low\" or \"near the bottom\". For anything described as "
+        "\"in the upper half\" or \"in the lower half\", say nothing about the "
+        "range at all — it is not noteworthy.",
+        "- When you do mention it, copy the wording verbatim. Never invent your "
+        "own characterisation.",
+        "- If the headlines contain no explanation for a move, write the move "
+        "plainly and stop. Never write \"without a clear catalyst\", \"no clear "
+        "driver\" or any equivalent — an unexplained move is stated, not "
+        "annotated.",
     ]
     return "\n".join(lines)
 
