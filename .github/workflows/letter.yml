@@ -56,3 +56,11 @@ jobs:
             git commit -m "Weekly letter: $(date +'%Y-%m-%d')"
             git push
           fi
+      - name: Upload draft on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-draft
+          path: |
+            letters/
+            data/context.md
