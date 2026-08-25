@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T07:55:06Z",
+  "generated_at": "2026-08-25T11:17:08Z",
   "week_label": "17-21 August 2026",
   "week_start": "2026-08-17",
   "week_end": "2026-08-21",
@@ -300,49 +300,49 @@
       {
         "series": "DGS10",
         "name": "US 10Y Treasury",
-        "last_pct": 4.69,
-        "chg_1w_bps": 1.0,
-        "chg_1m_bps": 2.0,
-        "chg_ytd_bps": 55.0,
-        "as_of": "2026-08-20"
+        "last_pct": 4.74,
+        "chg_1w_bps": 6.0,
+        "chg_1m_bps": 7.0,
+        "chg_ytd_bps": 60.0,
+        "as_of": "2026-08-21"
       },
       {
         "series": "DGS2",
         "name": "US 2Y Treasury",
-        "last_pct": 4.19,
-        "chg_1w_bps": 2.0,
-        "chg_1m_bps": -12.0,
-        "chg_ytd_bps": 73.0,
-        "as_of": "2026-08-20"
+        "last_pct": 4.24,
+        "chg_1w_bps": 7.0,
+        "chg_1m_bps": -7.0,
+        "chg_ytd_bps": 78.0,
+        "as_of": "2026-08-21"
       }
     ],
     "Euro area (ECB)": [
       {
         "series": "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y",
         "name": "Euro area AAA 10Y",
-        "last_pct": 3.279,
-        "chg_1w_bps": 6.7,
-        "chg_1m_bps": 7.5,
-        "chg_ytd_bps": 31.5,
-        "as_of": "2026-08-20"
+        "last_pct": 3.271,
+        "chg_1w_bps": 5.8,
+        "chg_1m_bps": 6.7,
+        "chg_ytd_bps": 30.7,
+        "as_of": "2026-08-21"
       },
       {
         "series": "YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y",
         "name": "Euro area all-issuer 10Y",
-        "last_pct": 3.709,
-        "chg_1w_bps": 8.4,
-        "chg_1m_bps": 8.2,
-        "chg_ytd_bps": 36.6,
-        "as_of": "2026-08-20"
+        "last_pct": 3.7,
+        "chg_1w_bps": 7.5,
+        "chg_1m_bps": 7.3,
+        "chg_ytd_bps": 35.8,
+        "as_of": "2026-08-21"
       },
       {
         "series": "DERIVED",
         "name": "Euro area 10Y spread (all-issuer - AAA)",
-        "last_pct": 0.43,
+        "last_pct": 0.429,
         "chg_1w_bps": 1.7,
-        "chg_1m_bps": 0.7,
+        "chg_1m_bps": 0.6,
         "chg_ytd_bps": 5.1,
-        "as_of": "2026-08-20"
+        "as_of": "2026-08-21"
       }
     ]
   }
