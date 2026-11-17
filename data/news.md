@@ -1,70 +1,74 @@
-# News briefing — week of 17-21 August 2026
+# News briefing — week of 09-13 November 2026
 _Headlines collected from public RSS feeds. Verify anything you state as fact; headlines can be misleading in isolation._
 
 ## European equities
-- [19 Aug] European Stocks Struggle to Recover After Sharp Selloff: DAX, CAC, FTSE100 - Yahoo Finance UK (Yahoo Finance UK)
-- [25 Aug] 9am Markets Update - RTE.ie (RTE.ie)
-- [20 Aug] Europe's STOXX 600 slips on inflation fears - Reuters (Reuters)
-- [17 Aug] European stocks rise as lower yields and Fed pause expectations support sentiment: DAX, CAC, FTSE100 - Yahoo Finance UK (Yahoo Finance UK)
-- [18 Aug] European Markets Surge: FTSE 100, CAC 40, DAX 40, FTSE MIB, and Euro Stoxx 50 Hit Record Highs - BBN Times (BBN Times)
-- [24 Aug] European stocks close mixed amid uncertainty over US sanctions on Iran - Anadolu Ajansı (Anadolu Ajansı)
-- [19 Aug] European Stocks Close Lower - Qatar news agency (Qatar news agency)
-- [24 Aug] European Stocks Hold Near Three-Week Lows as Investors Await Iran Sanctions: DAX, CAC, FTSE100 - Yahoo Finance UK (Yahoo Finance UK)
+- [11 Nov] European Stocks Advance as STOXX 600 Approaches Record High on Technology Gains and Corporate Earnings: DAX, CAC, FTSE100 - Yahoo Finance UK (Yahoo Finance UK)
+- [11 Nov] AI Demand Concerns Ease as Euro Stoxx 600 Nears Record High; German, French, UK Indexes All Advance - BigGo Finance (BigGo Finance)
+- [10 Nov] Market Wrap: European Stocks Rise, Infineon Shares Up 5% 🔼 Wall Street Weakens Ahead of U.S. CPI - XTB.com (XTB.com)
+- [12 Nov] Europe close: Stocks end up but off highs as Nvidia's Huang resigns - Sharecast.com (Sharecast.com)
+- [16 Nov] European Shares Steady as Investors Await Nvidia Earnings and Anthropic IPO: DAX, CAC, FTSE100 - Yahoo Finance UK (Yahoo Finance UK)
+- [13 Nov] European Stocks Little Changed; Stoxx 600 Hits Third Straight Record High — AI Stocks Watched After Nvidia CEO Resigns - BigGo Finance (BigGo Finance)
+- [16 Nov] Europe close: Stocks fall ahead of Nvidia earnings - Sharecast.com (Sharecast.com)
+- [13 Nov] European Shares Retreat From Record Highs as AI Uncertainty and Fed Rate Expectations Weigh on Sentiment: DAX, CAC, FTSE100 - Yahoo Finance UK (Yahoo Finance UK)
 
 ## ECB and euro area rates
-- [18 Aug] Europe still needs forward guidance — but not as a straitjacket - Financial Times (Financial Times)
-- [19 Aug] Inflation in the Euro Area Gets Worse - Haver Analytics (Haver Analytics)
-- [21 Aug] Traders are bracing for an increasingly hawkish ECB - Reuters (Reuters)
-- [23 Aug] Why Europe needs Eurobonds - CEPR (CEPR)
-- [19 Aug] ECB: Wage Growth Remains Moderate, No Signs of Second-Round Effects - Global Banking & Finance Review (Global Banking & Finance Review)
-- [21 Aug] ECB Says Consumers’ Inflation Expectations Edged Down in July - Bloomberg (Bloomberg)
-- [17 Aug] Euro Zone Bond Yields Near 15 Year Highs as Iran War Fuels Inflation Fears - Modern Diplomacy (Modern Diplomacy)
-- [24 Aug] ECB’s Cipollone: Eurozone Stagnation and Sharp Inflation Rise ‘Rather Remote’ - CryptoRank (CryptoRank)
+- [10 Nov] The science and practice of monetary policy communication: the ECB experience - European Central Bank (European Central Bank)
+- [11 Nov] Our economic outlook for the euro area - Vanguard Corporate (Vanguard Corporate)
+- [17 Nov] The geography of financial frictions - CEPR (CEPR)
+- [12 Nov] Lagarde’s early exit puts ECB climate agenda at a crossroads - Green Central Banking (Green Central Banking)
+- [11 Nov] 2027: monetary outlook and fiscal implications - CaixaBank Research (CaixaBank Research)
+- [12 Nov] Inflation!? Germany, the euro area and the European Central Bank - Bruegel (Bruegel)
+- [16 Nov] Risks and resilience in the euro area financial system - European Central Bank (European Central Bank)
+- [10 Nov] ECB highlights communication’s role in shaping euro area monetary policy transmission - Traders Union (Traders Union)
 
 ## European banks
-- [18 Aug] BNP Paribas Share News (BNP.PA) - London South East (London South East)
-- [21 Aug] HSBC Spends $68mn on Biggest Senior Banker Cull Since Financial Crisis - European Business Magazine (European Business Magazine)
-- [24 Aug] An Incredible Contraction of the EU Banking Sector - logos-pres.md (logos-pres.md)
-- [24 Aug] Nordea stock gains as European banks advance on August 24, 2026 - Ad-hoc-news.de (Ad-hoc-news.de)
-- [21 Aug] HSBC pays US$67.5 mln in severance in 2025 to lay off 134 senior bankers, FT reports - The Standard (HK) (The Standard (HK))
+- [16 Nov] Deutsche Bank Takes Aim at US With Traders Set for Record Year - Bloomberg.com (Bloomberg.com)
+- [16 Nov] International Banker 2026 Western & Eastern European Awards Winners - International Banker (International Banker)
+- [16 Nov] BNP Paribas SA (BNP.PA) Stock Price, News, Quote & History - Yahoo! Finance Canada (Yahoo! Finance Canada)
 
 ## US markets
-- [19 Aug] S&P 500 Under Pressure as Tech Stocks and Yields Weigh - VT Markets (VT Markets)
-- [25 Aug] US Stock Market Today: S&P 500 Futures Edge Lower As Inflation Jitters Linger - simplywall.st (simplywall.st)
-- [19 Aug] Stock Market: Will S&P 500 Open Up or Down Today? - Benzinga (Benzinga)
-- [20 Aug] Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall as Trump Launches ‘Operation Economic Fury’ on Iran— BULL, WMT, MRK Stock in Focus (UPDATED) - TradingView (TradingView)
-- [25 Aug] Stock Market: Will S&P 500 Open Up or Down Today? - TradingView (TradingView)
-- [25 Aug] S&P 500, Nasdaq, Dow Futures Mixed As Nvidia Earnings, Fed Signals, PCE Inflation Keep Markets On Edge This Week - TradingView (TradingView)
-- [21 Aug] US Stock Market Today: S&P 500 Futures Edge Lower On Mixed Fed Rate Signals - simplywall.st (simplywall.st)
-- [16 Aug] Fed Policy Silence Pushes Wall Street to Bet on Corporate Earnings as S&P 500 Profits Hit Five-Year High - finance.biggo.com (finance.biggo.com)
+- [13 Nov] E-mini S&P 500 Futures Overview - CME Group (CME Group)
+- [10 Nov] Wall St ends lower as hot inflation data, Fed comments heighten rate worries - Reuters (Reuters)
+- [13 Nov] US Stocks Drift Before Inflation Test of Fed Bets: Markets Wrap - Bloomberg.com (Bloomberg.com)
+- [17 Nov] S&P 500 forecast: Why US stocks have largely defied gravity and what could trigger a correction - FOREX.com (FOREX.com)
+- [11 Nov] Tech Gains Boost Stocks as Bonds Slide on Fed Bets: Markets Wrap - Bloomberg.com (Bloomberg.com)
+- [11 Nov] Stock Market Today (Nov. 11, 2026): Nasdaq, S&P 500 gain after CoreWeave earnings beat; Apple hits new record - Yahoo Finance Singapore (Yahoo Finance Singapore)
+- [11 Nov] Stock Market: Will S&P 500 Open Up or Down Today? - Yahoo Finance (Yahoo Finance)
+- [16 Nov] Fed Gov. Michelle Bowman: Risk of "Large Correction" in Stocks if AI Doesn't Pan Out - The Motley Fool (The Motley Fool)
 
 ## AI and big tech
-- [19 Aug] Will the AI boom face a market correction? ECB report warns of risks - internationalfinance.com (internationalfinance.com)
-- [19 Aug] Why Big Tech’s AI Spending Is $3 Trillion Higher Than It Seems - WSJ (WSJ)
-- [22 Aug] Alphabet, Meta, and Microsoft Are Hiding $3 Trillion in Debt On the AI Boom’s Hidden Ledger - Yahoo Finance (Yahoo Finance)
-- [19 Aug] Prediction: 3 Unstoppable Artificial Intelligence Stocks That Will Join Nvidia, Apple, and Alphabet in the $4 Trillion Club by 2028 - The Motley Fool (The Motley Fool)
-- [24 Aug] NVIDIA set to report Q2 earnings on August 26 with $91B revenue expected - eciks.org (eciks.org)
-- [18 Aug] NVIDIA's Biggest Earnings Bet Yet: $733 Billion in AI Spending vs Market That's Already Priced It In - Memeburn (Memeburn)
-- [24 Aug] Nvidia Earnings Preview: Stock Has Dropped After 5 of Last 6 Reports, and 'A Simple Beat May Not Be Enough' - TradingView (TradingView)
-- [20 Aug] World's Largest Companies by Market Cap (July 2026): Nvidia Leads, AI Theme Intact but Chip Stocks Face Valuation Adjustments - TradingKey (TradingKey)
+- [12 Nov] Magnificent 7 Stocks: What You Need To Know - Investopedia (Investopedia)
+- [09 Nov] Anthropic IPO: 4 tech giants set to gain from the listing - qz.com (qz.com)
+- [09 Nov] Best AI Stocks to Buy in 2026: 10 Top Picks & How to Invest - The Motley Fool (The Motley Fool)
+- [12 Nov] Alphabet Climbs 3% as NVIDIA's Leadership Shake-Up Puts Google's AI Chips in the Spotlight; Microsoft Gains 2%, Amazon Ticks Up - 24/7 Wall St. (24/7 Wall St.)
+- [17 Nov] The Zacks Analyst Blog Highlights NVIDIA, Alphabet, Amazon and Microsoft - The Globe and Mail (The Globe and Mail)
+- [16 Nov] Bill Ackman sees Amazon, Microsoft, Meta and Google benefiting from AI data center restrictions - Beinsure (Beinsure)
+- [16 Nov] . 🐾 Options Puppy — What can push NVIDIA back to $200? - Longbridge (Longbridge)
+- [08 Nov] The Largest Companies by Market Cap in November 2026 - The Motley Fool (The Motley Fool)
 
 ## Commodities and FX
-- [23 Aug] Why Gold, Oil And The Dollar Are All Flashing Warning Signs - Exchange Rates UK (Exchange Rates UK)
-- [24 Aug] Euro holds near three-month highs as investors await US sanctions to Iran - FXStreet (FXStreet)
-- [24 Aug] The Gold-Oil Split Is Telling You What Markets Really Believe About Iran - Modern Diplomacy (Modern Diplomacy)
-- [21 Aug] FTSE 100 ends week up thanks to strong private sector and soaring gold price - AOL.co.uk (AOL.co.uk)
-- [21 Aug] Gold (XAUUSD) Price Forecast: Gold Breakout Clears 200-Day MA as Dollar Falls - FXEmpire (FXEmpire)
-- [18 Aug] Brent: War-linked range trading outlook – BBH - tmgm.com (tmgm.com)
-- [24 Aug] Euro Holds Near Highs As U.S. Sanctions Eyed - TradingPedia (TradingPedia)
-- [21 Aug] European shares climb on gold boost; weekly decline still in sight - WKZO (WKZO)
+- [11 Nov] The Commodities Feed: Oil slides on easing Middle East tensions - ing think (ing think)
+- [16 Nov] Crude Oil Weekly Outlook: Geopolitics vs Oversupply Risks - StoneX (StoneX)
+- [17 Nov] Weekly market commentary - BlackRock (BlackRock)
+- [16 Nov] Market Open: Legal & General Pension Flows, Synectics Defence Deal - Yahoo Finance UK (Yahoo Finance UK)
+- [12 Nov] Brent: Inflation expectations rise on price rebound – Deutsche Bank - www.tmgm.com (www.tmgm.com)
+- [16 Nov] European and Asian Stock Markets Today, November 16, 2026: Europe Holds Steady as Asian Tech Slides - Eurasia Business News (Eurasia Business News)
+- [17 Nov] Morning briefing: EUR/USD has broken below 1.1000 - FXStreet (FXStreet)
+- [17 Nov] US Dollar Price Forecast: DXY Eases From 19-Month High, Can EUR/USD Hold 1.1000 and GBP/USD 1.3174? - FXEmpire (FXEmpire)
 
 ## Week ahead
-- [21 Aug] What to Look Out for in Economic Data This Week (August 24-28) - Kiplinger (Kiplinger)
-- [22 Aug] Calendar: What investors need to know for the week ahead - The Globe and Mail (The Globe and Mail)
-- [21 Aug] Earnings Calendar and Analysis for This Week (August 24-28) - Kiplinger (Kiplinger)
+- [16 Nov] Economic Week Ahead: Inflation, Fed Minutes and Nvidia Earnings Take Centre Stage - Investing.com UK (Investing.com UK)
+- [15 Nov] USD/JPY Weekly Outlook: Bulls Eye Higher Range After Historic Rate Shock - StoneX (StoneX)
+- [13 Nov] What to Look Out for in Economic Data This Week (November 16-20) - Kiplinger (Kiplinger)
+- [13 Nov] Earnings Calendar and Analysis for This Week - Yahoo Finance (Yahoo Finance)
+- [13 Nov] Weekly market update | Market recap - Fidelity Investments (Fidelity Investments)
+- [13 Nov] Earnings Calendar and Analysis for This Week (November 16-20) - Kiplinger (Kiplinger)
+- [16 Nov] US Market Week Ahead: Nvidia Earnings, Retail Sales - Gotrade (Gotrade)
+- [09 Nov] US Market Week Ahead: October CPI and AI Earnings in Focus - Gotrade (Gotrade)
 
 ## ECB press releases (primary source)
-- [24 Aug] Piero Cipollone: Interview with ilsussidiario.net
-- [21 Aug] ECB Consumer Expectations Survey results – July 2026
-- [19 Aug] Christine Lagarde: Panel remarks about the European economy during a discussion on the global economic outlook at the World Economic Forum
-- [17 Aug] Philip R. Lane: The rise in defence spending and the euro area economy
+- [16 Nov] Frank Elderson: Smart supervision for small banks
+- [16 Nov] Boris Vujčić: Risks and resilience in the euro area financial system
+- [13 Nov] Isabel Schnabel: Made in Europe
+- [10 Nov] Philip R. Lane: The science and practice of monetary policy communication: the ECB experience
+- [10 Nov] Piero Cipollone: Cash and the digital euro: two sides of the same coin
