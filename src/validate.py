@@ -142,29 +142,99 @@ def names_in_line(line: str, names: list[str]) -> list[str]:
     return [n for n in hits if not any(o != n and n in o for o in hits)]
 
 
+CLAIM_RE = re.compile(r"52[- ]week (high|low)s?\b", re.IGNORECASE)
+# Clause boundaries: sentence ends, semicolons, dashes, "while/whereas" etc.
+CLAUSE_BREAK = re.compile(
+    r"(?:[.!?](?:\s|$)|;|\s[—–-]\s|,?\s(?:while|whereas|but|and)\s)", re.IGNORECASE
+)
+# Words right before "52-week ..." that mean it is NOT a claim of being there
+NOT_A_CLAIM = re.compile(
+    r"\b(below|under|off|from|short of|away from|above|over|since|than|"
+    r"retreated from|pulled back from)\s+(?:its|their|the|a|an)?\s*"
+    r"(?:fresh|new|recent|prior)?\s*$",
+    re.IGNORECASE,
+)
+# "near/close to a 52-week high" is a softer claim: relaxed thresholds
+SOFT_CLAIM = re.compile(
+    r"\b(near|close to|approaching|nearing|within reach of)\s+(?:its|their|the|a|an)?\s*"
+    r"(?:fresh|new|recent)?\s*$",
+    re.IGNORECASE,
+)
+SOFT_HIGH, SOFT_LOW = 95.0, 5.0
+
+
+def _name_positions(line: str, names: list[str]) -> list[tuple[int, int, str]]:
+    """All (start, end, name) occurrences, dropping names nested in longer ones."""
+    spans = []
+    for n in names:                       # names are sorted longest first
+        for m in re.finditer(re.escape(n), line):
+            if any(s <= m.start() and m.end() <= e for s, e, _ in spans):
+                continue
+            spans.append((m.start(), m.end(), n))
+    return sorted(spans)
+
+
+def _subject_of_claim(line: str, claim_start: int, claim_end: int,
+                      spans: list[tuple[int, int, str]]) -> str | None:
+    """The instrument a "52-week high/low" phrase refers to: the nearest
+    name before it in the same clause, else the first one after it in the
+    same clause, else the line's leading instrument (bullet format)."""
+    breaks_before = [m.end() for m in CLAUSE_BREAK.finditer(line, 0, claim_start)]
+    clause_start = breaks_before[-1] if breaks_before else 0
+    nxt = CLAUSE_BREAK.search(line, claim_end)
+    clause_end = nxt.start() if nxt else len(line)
+
+    before = [n for s, e, n in spans if clause_start <= s and e <= claim_start]
+    if before:
+        return before[-1]
+    after = [n for s, e, n in spans if claim_end <= s and e <= clause_end]
+    if after:
+        return after[0]
+    bullet = re.match(r"\s*[-*]\s+([^:]+):", line)
+    if bullet:
+        for _, _, n in spans:
+            if n == bullet.group(1).strip():
+                return n
+    return None
+
+
 def check_range_claims(text: str, expected: dict) -> list[str]:
-    """Flag 52-week high/low claims where the range position doesn't support it."""
+    """Flag 52-week high/low claims where the range position doesn't support it.
+
+    Each claim is attributed to the single instrument it refers to, so a
+    sentence like "EUR/USD at a 52-week low while the DXY hit a 52-week
+    high" checks EUR/USD against "low" and the DXY against "high" only.
+    """
     problems: list[str] = []
     names = sorted(expected.keys(), key=len, reverse=True)
 
     for line in text.splitlines():
-        if not re.search(r"52[- ]week (high|low)", line, re.IGNORECASE):
+        if not CLAIM_RE.search(line):
             continue
-        claims_high = bool(re.search(r"52[- ]week high", line, re.IGNORECASE))
-
-        for name in names_in_line(line, names):
+        spans = _name_positions(line, names)
+        for m in CLAIM_RE.finditer(line):
+            prefix = line[:m.start()]
+            if NOT_A_CLAIM.search(prefix):
+                continue                       # "below its 52-week high" etc.
+            soft = bool(SOFT_CLAIM.search(prefix))
+            name = _subject_of_claim(line, m.start(), m.end(), spans)
+            if name is None:
+                continue
             pos = expected[name]["row"].get("range_52w_pos")
             if pos is None:
                 continue
-            if claims_high and pos < HIGH_THRESHOLD:
+            kind = m.group(1).lower()
+            high_min = SOFT_HIGH if soft else HIGH_THRESHOLD
+            low_max = SOFT_LOW if soft else LOW_THRESHOLD
+            if kind == "high" and pos < high_min:
                 problems.append(
-                    f"'{name}' is described as a 52-week high but sits at "
-                    f"{pos}% of its range"
+                    f"'{name}' is described as {'near ' if soft else ''}a 52-week high "
+                    f"but sits at {pos}% of its range\n      > {line.strip()[:220]}"
                 )
-            elif not claims_high and pos > LOW_THRESHOLD:
+            elif kind == "low" and pos > low_max:
                 problems.append(
-                    f"'{name}' is described as a 52-week low but sits at "
-                    f"{pos}% of its range"
+                    f"'{name}' is described as {'near ' if soft else ''}a 52-week low "
+                    f"but sits at {pos}% of its range\n      > {line.strip()[:220]}"
                 )
 
     # the same claim can appear on several lines; report each once
