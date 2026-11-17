@@ -23,6 +23,12 @@ from pathlib import Path
 from google import genai
 
 MODEL = os.environ.get("LETTER_MODEL", "models/gemini-3.6-flash")
+# Optional second model tried when the main one is rate-limited/overloaded.
+FALLBACK_MODEL = os.environ.get("LETTER_FALLBACK_MODEL", "").strip()
+
+MAX_ATTEMPTS = 5
+BACKOFF_SECONDS = [30, 90, 180, 300]   # waits between attempts
+MIN_WORDS = 500                        # a full letter is ~850-1000 words
 
 CONTEXT = Path("data/context.md")
 SNAPSHOT = Path("data/latest.json")
@@ -75,33 +81,62 @@ Write sections 1, 2 and 3. Stop after section 3 - the Article of the Week is
 added separately. Return only the letter in Markdown, with no preamble."""
 
 
+def _get(obj, key):
+    """Read a field from either an SDK object or a plain dict."""
+    if isinstance(obj, dict):
+        return obj.get(key)
+    return getattr(obj, key, None)
+
+
 def extract_text(interaction) -> str:
     """
-    Pull the letter out of the response. The SDK's response shape varies
-    between versions, so try the known accessors in order of preference.
-    """
-    for attr in ("output_text", "text"):
-        value = getattr(interaction, attr, None)
-        if isinstance(value, str) and value.strip():
-            return value
+    Pull the full letter out of the response.
 
-    steps = getattr(interaction, "steps", None) or []
+    The SDK's `output_text` only keeps the *trailing* block of model text.
+    Since late August 2026, gemini-3.6-flash interleaves thought steps
+    between its output chunks, so `output_text` came back with only the
+    last section (~220 words, zero figures) and validation failed every
+    week. We therefore stitch together every model_output text block
+    ourselves and only fall back to `output_text` if that yields nothing.
+    """
+    steps = _get(interaction, "steps") or []
     chunks: list[str] = []
     for step in steps:
-        text = getattr(step, "text", None)
-        if isinstance(text, str) and text.strip():
-            chunks.append(text)
-            continue
-        content = getattr(step, "content", None)
+        if _get(step, "type") != "model_output":
+            continue  # skip user_input, thought, tool steps
+        content = _get(step, "content")
         if isinstance(content, str) and content.strip():
             chunks.append(content)
         elif isinstance(content, list):
             for part in content:
-                part_text = getattr(part, "text", None)
-                if isinstance(part_text, str) and part_text.strip():
-                    chunks.append(part_text)
+                if _get(part, "type") not in (None, "text"):
+                    continue
+                text = _get(part, "text")
+                if isinstance(text, str) and text.strip():
+                    chunks.append(text)
 
-    return "\n".join(chunks).strip()
+    stitched = "".join(chunks).strip()
+    if stitched:
+        return stitched
+
+    for attr in ("output_text", "text"):
+        value = _get(interaction, attr)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return ""
+
+
+def looks_complete(letter: str) -> bool:
+    """Sections 1-3 must all be there and the letter must have real length."""
+    headings = [l for l in letter.splitlines() if l.lstrip().startswith("## ")]
+    return len(letter.split()) >= MIN_WORDS and len(headings) >= 3
+
+
+def is_retryable(exc: Exception) -> bool:
+    msg = f"{type(exc).__name__} {exc}"
+    return any(k in msg for k in ("429", "503", "500", "RateLimit",
+                                   "InternalServer", "ServiceUnavailable",
+                                   "high demand", "timed out", "Timeout"))
 
 
 def main() -> None:
@@ -123,41 +158,49 @@ def main() -> None:
     brief = BRIEF.read_text(encoding="utf-8").replace("{WEEK_LABEL}", week_label)
 
     client = genai.Client(api_key=api_key)
-    print(f"Drafting letter for week of {week_label} using {MODEL}...")
+    prompt = build_input(brief, week_label, context, news)
+    models = [MODEL] + ([FALLBACK_MODEL] if FALLBACK_MODEL else [])
 
+    letter = ""
     interaction = None
-    last_error = None
-    for attempt in range(1, 4):
+    last_error: Exception | None = None
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        # Switch to the fallback model for the second half of the attempts
+        model = models[-1] if attempt > (MAX_ATTEMPTS + 1) // 2 else models[0]
+        print(f"Drafting letter for week of {week_label} using {model} "
+              f"(attempt {attempt}/{MAX_ATTEMPTS})...")
         try:
             interaction = client.interactions.create(
-                model=MODEL,
-                input=build_input(brief, week_label, context, news),
+                model=model,
+                input=prompt,
                 generation_config={
                     "temperature": 0.7,
-                    "max_output_tokens": 8000,
+                    "max_output_tokens": 16000,  # thinking tokens count too
                     "top_p": 0.95,
                 },
             )
-            break
+            letter = extract_text(interaction)
+            if looks_complete(letter):
+                break
+            print(f"  incomplete draft ({len(letter.split())} words) — retrying")
+            last_error = RuntimeError(f"incomplete draft: {len(letter.split())} words")
         except Exception as exc:
             last_error = exc
-            print(f"  attempt {attempt}/3 failed: {type(exc).__name__}")
-            if attempt < 3:
-                time.sleep(20 * attempt)
+            print(f"  failed: {type(exc).__name__}: {str(exc)[:200]}")
+            if not is_retryable(exc):
+                break
+        if attempt < MAX_ATTEMPTS:
+            time.sleep(BACKOFF_SECONDS[min(attempt - 1, len(BACKOFF_SECONDS) - 1)])
 
-    if interaction is None:
-        sys.exit(f"Gemini API call failed after 3 attempts: {last_error}")
-
-    letter = extract_text(interaction)
-
-    if not letter:
-        # Response shape wasn't what we expected — dump it so we can adapt.
+    if interaction is not None:
+        # Always keep the raw response for debugging (uploaded on failure).
         Path("data/raw_response.txt").write_text(repr(interaction), encoding="utf-8")
-        sys.exit(
-            "Could not extract text from the response. "
-            "Raw object written to data/raw_response.txt — inspect it and "
-            "adjust extract_text()."
-        )
+
+    if not looks_complete(letter):
+        if letter:
+            OUT_DIR.mkdir(exist_ok=True)
+            (OUT_DIR / f"{snapshot['week_end']}.md").write_text(letter, encoding="utf-8")
+        sys.exit(f"No complete letter after {MAX_ATTEMPTS} attempts: {last_error}")
 
     # Strip stray code fences if the model wraps its output
     if letter.startswith("```"):
