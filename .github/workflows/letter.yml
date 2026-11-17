@@ -11,7 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
 
     steps:
       - name: Check out repository
@@ -37,6 +37,7 @@ jobs:
       - name: Draft letter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LETTER_FALLBACK_MODEL: ${{ vars.LETTER_FALLBACK_MODEL }}
         run: python src/draft_letter.py
 
       - name: Validate letter
@@ -64,3 +65,4 @@ jobs:
           path: |
             letters/
             data/context.md
+            data/raw_response.txt
