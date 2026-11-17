@@ -1,7 +1,7 @@
 yfinance>=0.2.58
 pandas>=2.2
 requests>=2.32
-google-genai>=1.0
+google-genai>=2.19,<3
 markdown>=3.6
 
 ### yfinance — pulls the market prices from Yahoo Finance
